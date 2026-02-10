@@ -38,16 +38,16 @@ const reviews = [
 function Review() {
   const [currentIdx, setCurrentIdx] = useState(0);
   const { id, name, job, image, text } = reviews[currentIdx];
+
   const prevReview = () => {
-    if (currentIdx === 0) {
-      return;
-    }
-    setCurrentIdx((prev) => --prev);
-  };
-  const nextReview = () => {
-    if (currentIdx === reviews.length - 1) return;
-    setCurrentIdx((prev) => ++prev);
-  };
+  setCurrentIdx((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
+};
+
+const nextReview = () => {
+  setCurrentIdx((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+};
+
+  
   const randomReview = () => {
     const randomIdx = Math.floor(Math.random() * reviews.length);
     setCurrentIdx(randomIdx);
