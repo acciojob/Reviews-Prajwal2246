@@ -55,7 +55,7 @@ function Review() {
   return (
     <article className="review">
       <img src={image} alt={name} className="person-img" />
-      <h4 id={`author-${id}`}>{name}</h4>
+      <h4 id={`author-${id}`} className="author">{name}</h4>
       <p className="job">{job}</p>
       <p className="info">{text}</p>
 
@@ -68,7 +68,7 @@ function Review() {
         </button>
       </div>
       <button className="random-btn" onClick={randomReview}>
-        Random
+        surprise me
       </button>
     </article>
   );
