@@ -53,7 +53,7 @@ function Review() {
     setCurrentIdx(randomIdx);
   };
   return (
-    <article>
+    <article className="review">
       <img src={image} alt={name} className="person-img" />
       <h4 id={`author-${id}`}>{name}</h4>
       <p className="job">{job}</p>
