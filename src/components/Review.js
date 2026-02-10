@@ -49,9 +49,15 @@ const nextReview = () => {
 
   
   const randomReview = () => {
-    const randomIdx = Math.floor(Math.random() * reviews.length);
-    setCurrentIdx(randomIdx);
-  };
+  let randomIdx = Math.floor(Math.random() * reviews.length);
+
+  if (randomIdx === currentIdx) {
+    randomIdx = (currentIdx + 1) % reviews.length;
+  }
+
+  setCurrentIdx(randomIdx);
+};
+
   return (
     <article className="review">
       <img src={image} alt={name} className="person-img" />
